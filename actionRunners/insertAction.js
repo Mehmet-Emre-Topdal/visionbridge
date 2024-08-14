@@ -22,3 +22,5 @@ function insertAction(action) {
         }
     });
 }
+
+module.exports = insertAction;

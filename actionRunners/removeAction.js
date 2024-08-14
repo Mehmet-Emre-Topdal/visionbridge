@@ -10,3 +10,5 @@ function removeAction(action) {
         element.remove();
     });
 }
+
+module.exports = removeAction;

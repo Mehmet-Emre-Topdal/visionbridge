@@ -1,3 +1,9 @@
+const insertAction = require("./insertAction");
+const removeAction = require("./removeAction");
+const replaceAction = require("./replaceAction");
+const alterAction = require("./alterAction");
+
+
 function applyAction(action) {
     if (action.type === 'remove') {
         removeAction(action);
@@ -11,3 +17,5 @@ function applyAction(action) {
         console.error("error from applyAction: unknown action type");
     }
 }
+
+module.exports = applyAction;

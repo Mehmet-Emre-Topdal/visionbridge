@@ -13,3 +13,5 @@ function replaceAction(action) {
         element.replaceWith(newEl);
     });
 }
+
+module.exports = replaceAction;

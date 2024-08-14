@@ -18,3 +18,5 @@ function alterAction(action) {
         console.error("error from alterAction: no text node found with the oldValue");
     }
 }
+
+module.exports = alterAction
