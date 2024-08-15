@@ -3,7 +3,7 @@ function replaceAction(action) {
     
     if (elements.length === 0) {
         console.error("error from replaceAction: no node found with this selector");
-        return;
+        return false;
     }
 
     elements.forEach(element => {
@@ -12,6 +12,8 @@ function replaceAction(action) {
         const newEl = tempDiv.firstChild;
         element.replaceWith(newEl);
     });
+
+    return true;
 }
 
 module.exports = replaceAction;

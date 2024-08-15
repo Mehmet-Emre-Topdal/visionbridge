@@ -3,7 +3,7 @@ function insertAction(action) {
     
     if (targetElements.length === 0) {
         console.error("error from insertAction: no node found with this selector");
-        return;
+        return false;
     }
 
     targetElements.forEach(target => {
@@ -21,6 +21,8 @@ function insertAction(action) {
             console.error("error from insertAction: unknown insert position");
         }
     });
+
+    return true;
 }
 
 module.exports = insertAction;

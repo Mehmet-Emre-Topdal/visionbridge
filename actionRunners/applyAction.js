@@ -1,18 +1,18 @@
-const insertAction = require("./insertAction");
-const removeAction = require("./removeAction");
-const replaceAction = require("./replaceAction");
-const alterAction = require("./alterAction");
+const insertAction = require("./Actions/insertAction");
+const removeAction = require("./Actions/removeAction");
+const replaceAction = require("./Actions/replaceAction");
+const alterAction = require("./Actions/alterAction");
 
 
 function applyAction(action) {
     if (action.type === 'remove') {
-        removeAction(action);
+        return removeAction(action);
     } else if (action.type === 'replace') {
-        replaceAction(action);
+        return replaceAction(action);
     } else if (action.type === 'insert') {
-        insertAction(action);
+        return insertAction(action);
     } else if (action.type === 'alter') {
-        alterAction(action);
+        return alterAction(action);
     } else {
         console.error("error from applyAction: unknown action type");
     }

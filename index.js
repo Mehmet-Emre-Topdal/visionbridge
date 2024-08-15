@@ -1,13 +1,12 @@
-const applyAction  = require("./actionRunners/applyAction");
-const readYAMLFile = require("./fileReader/readYAMLFile");
-const createQueues = require("./priority/createQueues");
 
+const  createDependencyTree  = require('./priority/createDependencyTree.js');
+const  readYAMLFile  = require('./fileReader/readYAMLFile.js');
+const  createQueues  = require('./priority/createQueues.js');
+const processActionsFromTree  = require('./actionRunners/processActionsFromTree.js');
 
-const configData = readYAMLFile("./data/A.yaml");
-const queues = createQueues(configData.actions)
+const configData = readYAMLFile('./data/A.yaml');
+const queues = createQueues(configData.actions);
+const dependencyTree = createDependencyTree(queues);
 
-queues.insert.forEach(action => applyAction(action));
-queues.remove.forEach(action => applyAction(action));
-queues.alter.forEach(action => applyAction(action));
-queues.remove.forEach(action => applyAction(action));
+processActionsFromTree(dependencyTree);
 
