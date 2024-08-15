@@ -1,5 +1,5 @@
-import fs from 'fs';
-import yaml from 'js-yaml';
+const fs = require("fs");
+const yaml = require("js-yaml")
 
 function readYAMLFile(filePath) {
     try {
@@ -15,4 +15,4 @@ function readYAMLFile(filePath) {
     }
 }
 
-export default readYAMLFile;
+module.exports = readYAMLFile;

@@ -14,7 +14,7 @@ function alterAction(action) {
         }
     }
 
-    if (!found) {
-        console.error("error from alterAction: no text node found with the oldValue");
-    }
+    return found;
 }
+
+module.exports = alterAction
